@@ -1,3 +1,4 @@
+#!/bin/bash
 export DISPLAY=:99
 
 if [ "$SCREEN" == "VNC" ] || [ "$SCREEN" == "Record VNC" ]; then
