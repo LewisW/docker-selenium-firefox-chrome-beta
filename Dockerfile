@@ -36,4 +36,4 @@ RUN npm install -g \
   selenium-standalone install && \
   pip install vnc2flv
 EXPOSE 4444 5999
-ENTRYPOINT ["sh", "/home/root/scripts/start.sh"]
+CMD ["/home/root/scripts/start.sh"]
