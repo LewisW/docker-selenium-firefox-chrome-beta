@@ -32,6 +32,6 @@ RUN npm install -g \
   selenium-standalone@3.0.2 \
   phantomjs@1.9.12 && \
   selenium-standalone install && \
-  pip install vnc2flv \
+  pip install vnc2flv
 EXPOSE 4444 5999
 ENTRYPOINT ["sh", "/home/root/scripts/start.sh"]
