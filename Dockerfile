@@ -21,6 +21,8 @@ RUN apt-get install -y -q \
   xfonts-75dpi \
   xfonts-scalable \
   xfonts-cyrillic \
+  python-dev \
+  python-apt \
   python-pip 
 RUN useradd -d /home/seleuser -m seleuser
 RUN mkdir -p /home/seleuser/chrome
