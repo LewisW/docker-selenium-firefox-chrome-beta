@@ -12,4 +12,5 @@ Running:
 ```shell
 docker pull vvoyer/docker-selenium-firefox-chrome
 docker run --privileged -p 5999:6999 -d --name selenium lewisw/selenium
+docker run --net container:selenium my/container
 ```
