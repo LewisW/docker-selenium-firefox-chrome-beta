@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 export DISPLAY=:99
 
 echo -e "\e[1;4mLaunching Virtual Screen\e[0m"
