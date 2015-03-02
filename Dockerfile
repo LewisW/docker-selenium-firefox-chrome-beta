@@ -29,11 +29,11 @@ RUN mkdir -p /home/seleuser/chrome
 RUN chown -R seleuser:seleuser /home/seleuser
 # fix https://code.google.com/p/chromium/issues/detail?id=318548
 RUN mkdir -p /usr/share/desktop-directories
-ADD ./scripts/ /home/root/scripts
 RUN npm install -g \
   selenium-standalone@3.0.2 \
   phantomjs@1.9.12 && \
   selenium-standalone install && \
   pip install vnc2flv
+ADD ./scripts/ /home/root/scripts
 EXPOSE 4444 5999
 CMD ["/home/root/scripts/start.sh"]
