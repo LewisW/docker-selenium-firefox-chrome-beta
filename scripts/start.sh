@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+
 export DISPLAY=:99
 
 echo -e "\e[1;4mLaunching Virtual Screen\e[0m"
-xvfb $DISPLAY -shmem -ac -screen 0 1024x768x16 > xvfb.log 2>&1 &
+Xvfb $DISPLAY -shmem -ac -screen 0 1024x768x16 > xvfb.log 2>&1 &
 
 if [ "$SCREEN" == "VNC" ] || [ "$SCREEN" == "Record VNC" ]; then
   echo -e "\e[1;4mLaunching VNC Server\e[0m"
