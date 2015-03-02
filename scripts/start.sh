@@ -19,9 +19,9 @@ fi
 
 if [ "$SELENIUM" == "PhantomJS" ]; then
     echo -e "\e[1;4mLaunching PhantomJS\e[0m"
-    phantomjs --webdriver=4444 > phantomjs.log 2>&1 &
+    phantomjs --webdriver=4444 > phantomjs.log 2>&1
 else
     echo -e "\e[1;4mLaunching Selenium\e[0m"
     # selenium must be started by a non-root user otherwise chrome can't start
-    su - seleuser -c "selenium-standalone start > selenium.log 2>&1 &"
+    su - seleuser -c "selenium-standalone start > selenium.log 2>&1"
 fi
