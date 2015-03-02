@@ -1,20 +1,20 @@
 mkdir -p build/logs
 export DISPLAY=:99
 
-if [ "$Screen" == "VNC" ] || [ "$Screen" == "VNC & Record" ]; then
-  echo -e "\e[1;4mLaunching VNC Server\e[0m"
-  #vncserver $DISPLAY -localhost -securitytypes=none
-  
-  xvfb $DISPLAY -shmem -ac -screen 0 1024x768x16 > build/logs/xvfb.log 2>&1 &
-  x11vnc -passwd secret -display :99 -N -forever &
+echo -e "\e[1;4mLaunching Virtual Screen\e[0m"
+xvfb $DISPLAY -shmem -ac -screen 0 1024x768x16 > build/logs/xvfb.log 2>&1 &
 
-  if [ "$Screen" == "VNC & Record" ]; then
+if [ "$SCREEN" == "VNC" ] || [ "$SCREEN" == "Record VNC" ]; then
+  echo -e "\e[1;4mLaunching VNC Server\e[0m"
+  
+  #vncserver $DISPLAY -localhost -securitytypes=none
+  x11vnc -localhost -nopw -display $DISPLAY -N -forever & > build/logs/vnc.log 2>&1 &
+
+  if [ "$SCREEN" == "VNC & Record" ]; then
     echo -e "\e[1;4mLaunching VNC Recorder\e[0m"
     flvrec.py -o build/vnc.flv localhost$DISPLAY > build/logs/flvrec.log 2>&1 &
   fi
   
-else
-  xvfb $DISPLAY -shmem -ac -screen 0 1024x768x16 > build/logs/xvfb.log 2>&1 &
 fi
 
 if [ "$Selenium" == "Selenium" ]; then
