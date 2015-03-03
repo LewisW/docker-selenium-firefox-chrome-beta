@@ -15,6 +15,7 @@ RUN apt-get install -y -q \
   google-chrome-stable \
   openjdk-7-jre-headless \
   nodejs \
+  dbus-x11 \
   x11vnc \
   xvfb \
   xfonts-100dpi \
@@ -30,8 +31,8 @@ RUN chown -R seleuser:seleuser /home/seleuser
 # fix https://code.google.com/p/chromium/issues/detail?id=318548
 RUN mkdir -p /usr/share/desktop-directories
 RUN npm install -g \
-  selenium-standalone@3.0.2 \
-  phantomjs@1.9.12 && \
+  selenium-standalone@latest -g \
+  phantomjs && \
   selenium-standalone install && \
   pip install vnc2flv
 ADD ./scripts/ /home/root/scripts
