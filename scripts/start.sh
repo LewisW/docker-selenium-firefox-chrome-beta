@@ -8,7 +8,7 @@ if [ "$SCREEN" == "VNC" ] || [ "$SCREEN" == "Record VNC" ]; then
   echo -e "\e[1;4mLaunching VNC Server\e[0m"
   vncserver $DISPLAY -localhost -securitytypes=none
   
-  if [ "$SCREEN" == "VNC & Record" ]; then
+  if [ "$SCREEN" == "Record VNC" ]; then
     echo -e "\e[1;4mLaunching VNC Recorder\e[0m"
     flvrec.py -o /build/vnc.flv localhost$DISPLAY > /build/flvrec.log 2>&1 &
   fi
