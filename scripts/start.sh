@@ -2,6 +2,7 @@
 export DISPLAY=:99
 
 mkdir -p /build
+chmod -R 777 build
 
 if [ "$SCREEN" == "VNC" ] || [ "$SCREEN" == "Record VNC" ]; then
   echo -e "\e[1;4mLaunching VNC Server\e[0m"
