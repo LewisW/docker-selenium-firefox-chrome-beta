@@ -27,4 +27,9 @@ else
     echo -e "\e[1;4mLaunching Selenium\e[0m"
     # selenium must be started by a non-root user otherwise chrome can't start
     su - seleuser -c "selenium-standalone start > /build/selenium.log 2>&1"
+    
+    if [ "$SAUCE_USERNAME" != "" ]; then
+      echo -e "\e[1;4mLaunching Sauce Connect\e[0m"
+      /opt/sc-4.3.10-linux/bin/sc 
+    fi
 fi
