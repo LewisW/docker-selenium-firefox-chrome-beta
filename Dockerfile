@@ -12,7 +12,7 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sou
 RUN apt-get update -y
 RUN apt-get install -y -q \
   firefox \
-  google-chrome-stable=41.0.2272.76-1 \
+  google-chrome-stable \
   openjdk-7-jre-headless \
   nodejs \
   dbus-x11 \
