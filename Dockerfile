@@ -31,7 +31,7 @@ RUN chown -R seleuser:seleuser /home/seleuser
 # fix https://code.google.com/p/chromium/issues/detail?id=318548
 RUN mkdir -p /usr/share/desktop-directories
 RUN npm install -g \
-  selenium-standalone@latest@4.2.0 -g \
+  selenium-standalone@4.2.0 -g \
   phantomjs && \
   selenium-standalone install && \
   pip install vnc2flv
