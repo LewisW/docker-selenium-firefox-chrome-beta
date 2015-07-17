@@ -36,5 +36,10 @@ RUN npm install -g \
   selenium-standalone install && \
   pip install vnc2flv
 ADD ./scripts/ /home/root/scripts
+
+# Install sauce connect
+RUN wget -O https://saucelabs.com/downloads/sc-4.3.10-linux32.tar.gz && \
+  tar -xzf sc-4.3.10-linux32.tar.gz -C /opt/
+
 EXPOSE 4444 5999
 CMD ["/home/root/scripts/start.sh"]
